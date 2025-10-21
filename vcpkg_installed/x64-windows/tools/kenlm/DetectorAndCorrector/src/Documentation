@@ -1,0 +1,37 @@
+From the trained Isizulu corpus that has an accuracy of {Total unique words: 20442
+                                                         Predicted to be correct: 16950.0
+                                                         Predicted to be incorrect: 3492.0
+                                                         Accuracy is: 82.917522747285}
+    The Siswati corpus got from isizulu trained model {Total unique words: 17939
+                           Predicted to be correct: 11711.0
+                           Predicted to be incorrect: 6228.0
+                           Accuracy is: 65.28234572718658}
+
+    IsiXhosa corpus got from isizulu trained model { Total unique words: 11418
+                          Predicted to be correct: 7799.0
+                          Predicted to be incorrect: 3619.0
+                          Accuracy is: 68.30443159922929}
+
+Trained siswati corpus has an accuracy of { Total unique words: 17717
+                                            Predicted to be correct: 15592.0
+                                            Predicted to be incorrect: 2125.0
+                                            Accuracy is: 88.00587006829599
+I had to stop training it before 90 % because after that it goes back to 58 %.
+
+
+    isizulu corpus from trained isiswati model { Total unique words: 20442
+                                                 Predicted to be correct: 16977.0
+                                                 Predicted to be incorrect: 3465.0
+                                                 Accuracy is: 83.04960375697095}
+
+    sixhosa corpus from trained isiswati model { Total unique words: 11418
+                                                 Predicted to be correct: 7810.0
+                                                 Predicted to be incorrect: 3608.0
+                                                 Accuracy is: 68.40077071290945}
+
+
+
+
+
+
+
