@@ -51,9 +51,13 @@ foreach ($lang in $languages) {
     }
     
     try {
-        # Use CMD to avoid PowerShell pipe buffer issues with large files
-        $cmd = "cmd.exe /c `"$lmplz -o $order < `"$inputPath`" > `"$outputPath`" 2>&1`""
-        Invoke-Expression $cmd
+        # Use CMD with proper escaping for file redirection
+        $inputPathFull = (Resolve-Path $inputPath).Path
+        $outputPathFull = Join-Path (Get-Location) $outputPath
+        $lmplzFull = (Resolve-Path $lmplz).Path
+        
+        $cmdLine = "cmd.exe /c `"`"$lmplzFull`" -o $order < `"$inputPathFull`" > `"$outputPathFull`" 2>&1`""
+        Invoke-Expression $cmdLine
         
         if (Test-Path $outputPath) {
             $size = (Get-Item $outputPath).Length / 1MB
