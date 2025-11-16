@@ -1,0 +1,88 @@
+Analysis of Questions & Proposed Solutions
+Questions 2-3: Word-level vs Character-level Models
+What they're asking:
+
+Question 2: Clarification on "word-level model" terminology
+Question 3: Whether cross-language testing was done (e.g., testing isiXhosa words on isiZulu model)
+Current situation:
+
+Two types of models exist:
+Character-level models (*UModel.arpa) - trained on space-separated characters
+Word-level models (*Model.arpa) - trained on whole words
+Currently, each language is only tested on its own model
+Question 4: Real-world Spellchecker Testing
+The Problem: Current testing compares correct vs incorrect words side-by-side, but real spellcheckers only see one word at a time and must determine if it's correct or not.
+
+Proposed Solution: Create a threshold-based detection system that:
+
+Scores individual words against the model
+Flags words below a certain threshold as "potentially misspelled"
+Determines optimal threshold through analysis of correct vs incorrect word distributions
+Question 5: Test Data Creation
+What they're asking: How were the misspelled words created? Were they:
+
+Real typos from users?
+Artificially generated?
+Created with a "spelling wrecker" tool?
+Proposed Solution: Document the test data creation methodology and potentially create a spelling wrecker tool to generate realistic typos.
+
+Question 6: Cross-Model Testing Matrix
+What they're asking: Test all language test files against all language models to create a confusion matrix.
+
+Proposed Solution: Create a matrix showing:
+
+              isiZulu Model | isiXhosa Model | isiNdebele Model | siSwati Model
+isiZulu_test      100%      |      ?%        |       ?%         |     ?%
+isiXhosa_test      ?%       |     70%        |       ?%         |     ?%
+isiNdebele_test    ?%       |      ?%        |      60%         |     ?%
+siSwati_test       ?%       |      ?%        |       ?%         |    90%
+Question 7: Corpus Files Used
+Answer: Based on the directory structure:
+
+Raw corpora: raw_corpora/*.txt
+Cleaned corpora: cleaned_corpora/*.txt
+Character-level corpora: character_corpora/*UCorpus.txt
+Question 8: Larger Test Dataset
+What they're asking: Expand from 20 test cases per language to:
+
+3x 20 = 60 cases per language (for averaging)
+OR use 1000+ words with automated wrecker tool
+Proposed Solution: Build a spelling wrecker tool that generates realistic typos and expand test dataset significantly.
+
+Question 9: Threshold Analysis
+What they're asking: Analyze score distributions to find optimal detection thresholds for real-world use.
+
+Proposed Solution:
+
+Score all correct words from corpus
+Score all incorrect words from test set
+Plot distributions
+Find optimal threshold that maximizes detection while minimizing false positives
+My Proposed Implementation Plan
+I would create a spec to implement the following features:
+
+Feature 1: Cross-Model Testing Matrix
+Modify run_spell_tests.py to test each language's test file against all 4 models
+Generate a confusion matrix showing cross-language performance
+Identify if models can detect misspellings in related languages
+Feature 2: Spelling Wrecker Tool
+Build a tool that generates realistic typos:
+Character substitutions (common keyboard mistakes)
+Character deletions
+Character insertions
+Character transpositions
+Phonetic errors specific to African languages
+Generate 1000+ test cases per language
+Feature 3: Threshold-Based Real Spellchecker
+Analyze score distributions for correct vs incorrect words
+Determine optimal detection thresholds
+Build a standalone spellchecker that:
+Takes a single word as input
+Returns: "correct" or "possibly misspelled" with confidence score
+Suggests corrections (using edit distance + model scoring)
+Feature 4: Enhanced Reporting & Analysis
+Statistical analysis of results
+Visualization of score distributions
+Performance metrics (precision, recall, F1-score)
+Comparison of character-level vs word-level models
+Would you like me to create a spec for any of these features? I'd recommend starting with Feature 3 (Threshold-Based Real Spellchecker) since that addresses the core concern in Question 4 and 9, and is the most practical for real-world use.
