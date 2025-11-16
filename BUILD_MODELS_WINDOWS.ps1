@@ -51,13 +51,18 @@ foreach ($lang in $languages) {
     }
     
     try {
-        # Run: Get-Content input.txt | lmplz.exe -o 3 > output.arpa
-        Get-Content $inputPath | & $lmplz -o $order 2>&1 | Out-File -FilePath $outputPath -Encoding utf8
+        # Use CMD to avoid PowerShell pipe buffer issues with large files
+        $cmd = "cmd.exe /c `"$lmplz -o $order < `"$inputPath`" > `"$outputPath`" 2>&1`""
+        Invoke-Expression $cmd
         
         if (Test-Path $outputPath) {
             $size = (Get-Item $outputPath).Length / 1MB
-            Write-Host "  [OK] Model built! Size: $([math]::Round($size, 2)) MB"
-            $successCount++
+            if ($size -gt 0.1) {
+                Write-Host "  [OK] Model built! Size: $([math]::Round($size, 2)) MB"
+                $successCount++
+            } else {
+                Write-Host "  [ERROR] Model file is too small (likely failed)"
+            }
         } else {
             Write-Host "  [ERROR] Model file not created"
         }
