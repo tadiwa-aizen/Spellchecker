@@ -13,7 +13,7 @@ Write-Host ""
 $lmplz = "vcpkg_installed\x64-windows\tools\kenlm\lmplz.exe"
 $inputDir = "character_corpora"
 $outputDir = "models"
-$order = 3
+$order = 5  # Using 5-gram to match previous models
 
 # Check if lmplz exists
 if (-not (Test-Path $lmplz)) {
