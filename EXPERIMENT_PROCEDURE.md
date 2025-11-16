@@ -14,7 +14,7 @@ Experiments 1-2 document which corpus files build which models and establish the
 
 ## Generate Character Corpora
 
-The cleaned and raw models where sourced from the sadilar Autshumato Corpora
+The cleaned and raw models where sourced from the sadilar Corpora
 
 
 **What:** Convert word-level corpora in cleaned/corpra to character-level format for model training
