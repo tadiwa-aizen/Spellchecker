@@ -1,8 +1,0 @@
-2. what do you mean with word-level model?
-3. word-level spell detection results: are they tested on either respective model, or are they all tested on the isiZulu model?
-4. For the testing: how do you determine that a word is spelled incorrectly? now you compare correct with incorrect, but that’s not how we use spell checkers.
-5. test data: how did you create each file? where do the correct words come from and how did you create the ‘mistakes/typos/incorrect’? did you use a spelling wrecker and if so, which one?
-6. please rerun where for each language all of the *_test.txt are run, so we end up with a matrix
-7. Which corpus files did you use to create the models?
-8. Can you re-run it at least with 2x 20 more wrecked words so we can average, or use a wrecker tool and take, say, 1000 words?
-9. Do you have the results with comparisons on correct vs incorrect, to see if a threshold is emerging from that so that we can compare against the threshold for if it were a real spellchecker?

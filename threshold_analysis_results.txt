@@ -1,0 +1,340 @@
+Loading the LM will be faster if you build a binary file.
+Reading /local/home/tadiwaom/tadiwa-aizen/Spellchecker/models/isiZuluUModel.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /local/home/tadiwaom/tadiwa-aizen/Spellchecker/models/isiXhosaUModel.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+Loading the LM will be faster if you build a binary file.
+Reading /local/home/tadiwaom/tadiwa-aizen/Spellchecker/models/isiNdebeleUModel.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+================================================================================
+Threshold Analysis for Real Spellchecking
+================================================================================
+
+================================================================================
+Threshold Analysis: isiZulu
+================================================================================
+Loading model: models/isiZuluUModel.arpa
+
+Sampling 1000 correct words from corpus...
+Scoring 1000 correct words...
+
+Loading incorrect words from: test_data/isiZulu_test_pairs.txt
+Scoring 918 incorrect words...
+
+================================================================================
+Score Distribution Statistics
+================================================================================
+
+Correct Words (n=1000):
+  Mean:     -6.506
+  Median:   -6.188
+  Std:       1.910
+  Min:     -44.111
+  Max:      -3.892
+  25%:      -7.147
+  75%:      -5.468
+
+Incorrect Words (n=918):
+  Mean:    -11.987
+  Median:  -12.040
+  Std:       2.549
+  Min:     -19.369
+  Max:      -4.998
+  25%:     -13.774
+  75%:     -10.345
+
+Score Differences (correct - incorrect):
+  Mean:      4.276
+  Median:    4.460
+  Std:       2.136
+  Min:      -2.042
+  Max:       9.585
+  25%:       3.010
+  75%:       5.774
+
+================================================================================
+Threshold Analysis
+================================================================================
+
+Testing thresholds (score_difference > threshold = misspelling detected):
+ Threshold   Detected   Accuracy  Precision     Recall         F1
+--------------------------------------------------------------------------------
+       0.5        857      93.4%       1.0%       0.9%     0.966
+       1.0        839      91.4%       1.0%       0.9%     0.955
+       1.5        825      89.9%       1.0%       0.9%     0.947
+       2.0        790      86.1%       1.0%       0.9%     0.925
+       2.5        736      80.2%       1.0%       0.8%     0.890
+       3.0        689      75.1%       1.0%       0.8%     0.857
+       3.5        618      67.3%       1.0%       0.7%     0.805
+       4.0        539      58.7%       1.0%       0.6%     0.740
+
+Best threshold: 0.5 (F1=0.966)
+
+================================================================================
+Absolute Score Threshold Analysis
+================================================================================
+
+Testing absolute score thresholds (score < threshold = misspelling):
+ Threshold      Correct    Incorrect    FP Rate    TP Rate
+--------------------------------------------------------------------------------
+     -15.0            3          106       0.3%      11.5%
+     -12.0            9          466       0.9%      50.8%
+     -10.0           24          726       2.4%      79.1%
+      -8.0          131          856      13.1%      93.2%
+      -6.0          557          904      55.7%      98.5%
+      -5.0          885          917      88.5%      99.9%
+      -4.0          996          918      99.6%     100.0%
+
+================================================================================
+Threshold Analysis: isiXhosa
+================================================================================
+Loading model: models/isiXhosaUModel.arpa
+
+Sampling 1000 correct words from corpus...
+Scoring 1000 correct words...
+
+Loading incorrect words from: test_data/isiXhosa_test_pairs.txt
+Scoring 916 incorrect words...
+
+================================================================================
+Score Distribution Statistics
+================================================================================
+
+Correct Words (n=1000):
+  Mean:     -6.443
+  Median:   -6.093
+  Std:       1.666
+  Min:     -24.552
+  Max:      -3.375
+  25%:      -7.117
+  75%:      -5.401
+
+Incorrect Words (n=916):
+  Mean:    -11.808
+  Median:  -11.836
+  Std:       2.686
+  Min:     -32.139
+  Max:      -4.993
+  25%:     -13.372
+  75%:     -10.160
+
+Score Differences (correct - incorrect):
+  Mean:      4.451
+  Median:    4.523
+  Std:       2.081
+  Min:      -2.532
+  Max:      10.554
+  25%:       3.147
+  75%:       5.892
+
+================================================================================
+Threshold Analysis
+================================================================================
+
+Testing thresholds (score_difference > threshold = misspelling detected):
+ Threshold   Detected   Accuracy  Precision     Recall         F1
+--------------------------------------------------------------------------------
+       0.5        871      95.1%       1.0%       1.0%     0.975
+       1.0        856      93.4%       1.0%       0.9%     0.966
+       1.5        835      91.2%       1.0%       0.9%     0.954
+       2.0        814      88.9%       1.0%       0.9%     0.941
+       2.5        770      84.1%       1.0%       0.8%     0.913
+       3.0        709      77.4%       1.0%       0.8%     0.873
+       3.5        641      70.0%       1.0%       0.7%     0.823
+       4.0        544      59.4%       1.0%       0.6%     0.745
+
+Best threshold: 0.5 (F1=0.975)
+
+================================================================================
+Absolute Score Threshold Analysis
+================================================================================
+
+Testing absolute score thresholds (score < threshold = misspelling):
+ Threshold      Correct    Incorrect    FP Rate    TP Rate
+--------------------------------------------------------------------------------
+     -15.0            2           79       0.2%       8.6%
+     -12.0           11          422       1.1%      46.1%
+     -10.0           34          701       3.4%      76.5%
+      -8.0          128          857      12.8%      93.6%
+      -6.0          529          907      52.9%      99.0%
+      -5.0          861          915      86.1%      99.9%
+      -4.0          991          916      99.1%     100.0%
+
+================================================================================
+Threshold Analysis: isiNdebele
+================================================================================
+Loading model: models/isiNdebeleUModel.arpa
+
+Sampling 1000 correct words from corpus...
+Scoring 1000 correct words...
+
+Loading incorrect words from: test_data/isiNdebele_test_pairs.txt
+Scoring 917 incorrect words...
+
+================================================================================
+Score Distribution Statistics
+================================================================================
+
+Correct Words (n=1000):
+  Mean:     -6.360
+  Median:   -6.052
+  Std:       1.844
+  Min:     -43.319
+  Max:      -3.578
+  25%:      -6.983
+  75%:      -5.345
+
+Incorrect Words (n=917):
+  Mean:    -12.006
+  Median:  -12.052
+  Std:       3.075
+  Min:     -38.580
+  Max:      -3.952
+  25%:     -13.623
+  75%:     -10.136
+
+Score Differences (correct - incorrect):
+  Mean:      4.527
+  Median:    4.722
+  Std:       2.151
+  Min:      -1.871
+  Max:      10.873
+  25%:       3.266
+  75%:       5.984
+
+================================================================================
+Threshold Analysis
+================================================================================
+
+Testing thresholds (score_difference > threshold = misspelling detected):
+ Threshold   Detected   Accuracy  Precision     Recall         F1
+--------------------------------------------------------------------------------
+       0.5        866      94.4%       1.0%       0.9%     0.971
+       1.0        847      92.4%       1.0%       0.9%     0.960
+       1.5        824      89.9%       1.0%       0.9%     0.947
+       2.0        801      87.4%       1.0%       0.9%     0.932
+       2.5        760      82.9%       1.0%       0.8%     0.906
+       3.0        716      78.1%       1.0%       0.8%     0.877
+       3.5        658      71.8%       1.0%       0.7%     0.836
+       4.0        585      63.8%       1.0%       0.6%     0.779
+
+Best threshold: 0.5 (F1=0.971)
+
+================================================================================
+Absolute Score Threshold Analysis
+================================================================================
+
+Testing absolute score thresholds (score < threshold = misspelling):Loading the LM will be faster if you build a binary file.
+Reading /local/home/tadiwaom/tadiwa-aizen/Spellchecker/models/siSwatiUModel.arpa
+----5---10---15---20---25---30---35---40---45---50---55---60---65---70---75---80---85---90---95--100
+****************************************************************************************************
+
+ Threshold      Correct    Incorrect    FP Rate    TP Rate
+--------------------------------------------------------------------------------
+     -15.0            2          117       0.2%      12.8%
+     -12.0            6          466       0.6%      50.8%
+     -10.0           19          703       1.9%      76.7%
+      -8.0          112          834      11.2%      90.9%
+      -6.0          519          902      51.9%      98.4%
+      -5.0          866          915      86.6%      99.8%
+      -4.0          988          916      98.8%      99.9%
+
+================================================================================
+Threshold Analysis: siSwati
+================================================================================
+Loading model: models/siSwatiUModel.arpa
+
+Sampling 1000 correct words from corpus...
+Scoring 1000 correct words...
+
+Loading incorrect words from: test_data/siSwati_test_pairs.txt
+Scoring 920 incorrect words...
+
+================================================================================
+Score Distribution Statistics
+================================================================================
+
+Correct Words (n=1000):
+  Mean:     -6.448
+  Median:   -6.129
+  Std:       1.932
+  Min:     -44.364
+  Max:      -3.585
+  25%:      -7.158
+  75%:      -5.384
+
+Incorrect Words (n=920):
+  Mean:    -12.126
+  Median:  -12.223
+  Std:       2.807
+  Min:     -35.816
+  Max:      -4.257
+  25%:     -13.754
+  75%:     -10.577
+
+Score Differences (correct - incorrect):
+  Mean:      4.618
+  Median:    4.793
+  Std:       2.186
+  Min:      -2.877
+  Max:      10.193
+  25%:       3.292
+  75%:       6.147
+
+================================================================================
+Threshold Analysis
+================================================================================
+
+Testing thresholds (score_difference > threshold = misspelling detected):
+ Threshold   Detected   Accuracy  Precision     Recall         F1
+--------------------------------------------------------------------------------
+       0.5        872      94.8%       1.0%       0.9%     0.973
+       1.0        860      93.5%       1.0%       0.9%     0.966
+       1.5        835      90.8%       1.0%       0.9%     0.952
+       2.0        794      86.3%       1.0%       0.9%     0.926
+       2.5        752      81.7%       1.0%       0.8%     0.900
+       3.0        723      78.6%       1.0%       0.8%     0.880
+       3.5        664      72.2%       1.0%       0.7%     0.838
+       4.0        595      64.7%       1.0%       0.6%     0.785
+
+Best threshold: 0.5 (F1=0.973)
+
+================================================================================
+Absolute Score Threshold Analysis
+================================================================================
+
+Testing absolute score thresholds (score < threshold = misspelling):
+ Threshold      Correct    Incorrect    FP Rate    TP Rate
+--------------------------------------------------------------------------------
+     -15.0            1          108       0.1%      11.7%
+     -12.0            9          487       0.9%      52.9%
+     -10.0           30          739       3.0%      80.3%
+      -8.0          127          857      12.7%      93.2%
+      -6.0          543          909      54.3%      98.8%
+      -5.0          855          917      85.5%      99.7%
+      -4.0          989          920      98.9%     100.0%
+
+================================================================================
+Summary: Recommended Thresholds
+================================================================================
+
+Language         Best Threshold   F1 Score    Mean Diff
+--------------------------------------------------------------------------------
+isiZulu                     0.5      0.966        4.276
+isiXhosa                    0.5      0.975        4.451
+isiNdebele                  0.5      0.971        4.527
+siSwati                     0.5      0.973        4.618
+
+================================================================================
+Conclusion
+================================================================================
+
+For real-world spellchecking:
+- Use score difference method: score(correct) - score(wrong) > threshold
+- Recommended threshold range: 1.5 - 2.5
+- Language-specific thresholds may improve accuracy
+- Consider using absolute score thresholds for single-word detection
